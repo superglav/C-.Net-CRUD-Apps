@@ -1,0 +1,33 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+
+    String errorMessage = "";
+    try
+    {
+        String id = Request.Query["id"];
+        String conStr = "Data Source=DESKTOP-19LCO0E;Initial Catalog=mystore;Integrated Security=True";
+
+        using (SqlConnection con = new SqlConnection(conStr)){
+            con.Open();
+            String sql = "DELETE FROM CLIENTS WHERE id = @id";
+            using (SqlCommand command = new SqlCommand(sql,con)){
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
+
+            }
+
+        }
+    }
+    catch (Exception ex)
+    {
+
+        errorMessage = ex.Message;
+    }
+
+
+    Response.Redirect("/Clients/Index");
+
+}
