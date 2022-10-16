@@ -1,0 +1,28 @@
+﻿@model MVCCrudEfApp.Models.AddEmployeeViewModel
+@{
+}
+<h1>Add Employee</h1>
+<form method="post" action="Add">
+  <div class="form-group">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" id="" asp-for="Name" placeholder="Enter Name">
+  </div>
+  <div class="form-group">
+    <label for="" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="" asp-for="Email" placeholder="Enter Email">
+  </div>
+ <div class="form-group">
+    <label for="" class="form-label">Salary</label>
+    <input type="number" class="form-control" id="" asp-for="Salary" placeholder="Enter Email">
+  </div>
+  <div class="form-group">
+    <label for="" class="form-label">Date of Birth</label>
+    <input type="date" class="form-control" id="" asp-for="DateOfBirth" placeholder="Enter Email">
+  </div>
+  <div class="form-group">
+    <label for="" class="form-label">Department</label>
+    <input type="text" class="form-control" id="" asp-for="Department" placeholder="example IT">
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
